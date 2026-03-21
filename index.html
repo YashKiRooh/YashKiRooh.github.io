@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Marry Me?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="starry-sky" id="starry-sky" aria-hidden="true"></div>
+  <div class="floating-hearts-bg" id="floating-hearts-bg" aria-hidden="true"></div>
+  <div class="heart-trail" id="heart-trail" aria-hidden="true"></div>
+  <div id="hearts-container" aria-hidden="true"></div>
+  <audio id="bg-music" loop>
+    <source src="audio/JVKE%20golden%20hour%20remixed%20lower%20bass%20version.mp3" type="audio/mpeg">
+  </audio>
+  <button type="button" class="music-toggle" id="music-toggle" aria-label="Toggle music" title="Your song">
+    <span class="music-icon">♪</span>
+  </button>
+
+  <main class="proposal">
+    <section class="screen intro" id="intro">
+      <div class="content">
+        <p class="greeting">My Dearest,</p>
+        <h1>I have something<br>important to ask you</h1>
+        <button class="btn-heart" id="btn-begin" type="button">
+          <svg class="btn-heart-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="btn-heart-text">Open my heart</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen story hidden" id="story">
+      <div class="content">
+        <h2 class="story-title">Our Love Story</h2>
+        <div class="timeline timeline-photos">
+          <article class="timeline-item">
+            <div class="timeline-photo">
+              <img src="images/WhatsApp Image 2026-03-06 at 22.03.17.jpeg" alt="Our story">
+            </div>
+            <div class="timeline-text">
+              <time>Feb 8, 11:02 AM</time>
+              <h3>You first texted me</h3>
+              <p>And my world changed in an instant.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-photo">
+              <img src="images/WhatsApp Image 2026-03-11 at 21.03.37.jpeg" alt="First video call">
+            </div>
+            <div class="timeline-text">
+              <time>Feb 8, 11:04 AM</time>
+              <h3>We first saw each other on video call</h3>
+              <p>You were wearing that beautiful blue dress. I couldn't look away.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-photo">
+              <img src="images/WhatsApp Image 2026-03-06 at 22.03.17.jpeg" alt="First date">
+            </div>
+            <div class="timeline-text">
+              <time>Feb 14, 12:03 PM</time>
+              <h3>Our first date at Starbucks</h3>
+              <p>Best coffee I've ever had—because you were there.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-photo timeline-photo-face">
+              <img src="images/WhatsApp Image 2026-02-23 at 16.41.27.jpeg" alt="First visit home">
+            </div>
+            <div class="timeline-text">
+              <time>Feb 21</time>
+              <h3>I came to your home</h3>
+              <p>Meeting your world made me fall even harder.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-photo">
+              <img src="images/WhatsApp Image 2026-03-20 at 15.36.50.jpeg" alt="First I love you">
+            </div>
+            <div class="timeline-text">
+              <time>March 12, 7:12 PM</time>
+              <h3>We said "I love you" for the first time</h3>
+              <p>Three words that changed everything. Forever.</p>
+            </div>
+          </article>
+        </div>
+        <button class="btn-primary" id="btn-secret">Continue</button>
+      </div>
+    </section>
+
+    <!-- Secret question: change the prompt in HTML and the answer check in script.js (search for "blue") -->
+    <section class="screen secret-question hidden" id="secret-question">
+      <div class="content">
+        <h2>One question before you go further...</h2>
+        <p class="secret-prompt">What color was the dress you wore on our first video call?</p>
+        <input type="text" id="secret-answer" class="secret-input" placeholder="Your answer" autocomplete="off">
+        <button class="btn-primary" id="btn-check-answer">Check</button>
+      </div>
+    </section>
+
+    <section class="screen secret-wrong hidden" id="secret-wrong">
+      <div class="content">
+        <p class="secret-denied">These are not for you to see.</p>
+        <p class="secret-denied-sub">This page is meant for someone very special to me.</p>
+        <button class="btn-primary" id="btn-to-letter">Continue to the letter</button>
+      </div>
+    </section>
+
+    <section class="screen secret-photos hidden" id="secret-photos">
+      <div class="content">
+        <h2>For your eyes only</h2>
+        <div class="private-gallery">
+          <img src="images/WhatsApp Image 2026-03-04 at 10.39.46.jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16.jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16 (1).jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16 (2).jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16 (3).jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16 (4).jpeg" alt="For you">
+          <img src="images/WhatsApp Image 2026-03-20 at 15.37.16 (5).jpeg" alt="For you">
+        </div>
+        <button class="btn-primary" id="btn-after-photos">Read my letter</button>
+      </div>
+    </section>
+
+    <section class="screen letter hidden" id="letter">
+      <div class="content letter-content">
+        <h2 class="letter-title">A Letter for You</h2>
+        <div class="letter-body">
+          <p>My dearest,</p>
+          <p>From the moment you first texted me, I knew my life was about to change. Every video call, every coffee date, every moment we've shared—they've all led to this.</p>
+          <p>You are the most beautiful soul I've ever known. Your smile lights up my world, and your love has made me a better person.</p>
+          <p>I can't imagine my future without you in it. So today, with my whole heart, I'm asking you...</p>
+        </div>
+        <button class="btn-primary" id="btn-continue">Continue to the question</button>
+      </div>
+    </section>
+
+    <section class="screen question hidden" id="question">
+      <div class="content">
+        <div class="proposal-heart" id="proposal-heart">
+          <svg class="heart-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <p class="subtitle">You make every day brighter</p>
+        <h2>Will you marry me?</h2>
+        <div class="buttons">
+          <button class="btn-yes" id="btn-yes">Yes!</button>
+          <button class="btn-no" id="btn-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen yes-screen hidden" id="yes-screen">
+      <div class="content yes-content">
+        <div class="proposal-reveal" id="proposal-reveal">
+          <div class="reveal-heart">
+            <svg class="heart-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div class="reveal-ring">💍</div>
+        </div>
+        <div class="heart-burst">♥</div>
+        <h2 class="yes-title">You said yes!</h2>
+        <p class="message">I can't wait to spend forever with you.<br>I love you with all my heart.</p>
+        <p class="quote">Always and Forever</p>
+        <p class="hashtag">#YashKiRooh</p>
+        <div class="yes-video-wrap">
+          <video id="yes-video" class="yes-video" playsinline controls>
+            <source src="video/vidiofy_video_1774020785956.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen no-screen hidden" id="no-screen">
+      <div class="content">
+        <p class="tease">Nice try! 😊</p>
+        <h2>There's only one right answer...</h2>
+        <button class="btn-primary" id="btn-try-again">Try again</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
